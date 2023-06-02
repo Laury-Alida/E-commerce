@@ -6,9 +6,8 @@ from store.models import Produit
 
 # Create your views here.
 def index(request):
-    produit = Produit.objects.all()
-
-    return render(request, 'store/index.html', context={'produit': produit})
+    produits = Produit.objects.all()
+    return render(request, 'store/index.html', context={'produits': produits})
 
 def detail_produit(request, slug):
     produit = get_object_or_404(Produit, slug=slug)

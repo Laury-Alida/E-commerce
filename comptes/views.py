@@ -8,14 +8,14 @@ User = get_user_model()
 
 # Create your views here.
 def signup(request):
-    if request.method == 'post':
+    if request.method == "POST":
         #traiter le formulaire
-      username = request.post.get('username')
-      password = request.post.get('password')
-      user = User.objects.create_user(username = username, password = password)
+         username = request.POST.get('username')
+         password = request.POST.get('password')
+         user = User.objects.create_user(username = username, password = password)
 
-      login(request, user)
-      return redirect('index')
+         login(request, user)
+         return redirect('index')
 
 
     return render(request, "comptes/signup.html")
@@ -23,15 +23,15 @@ def signup(request):
 
 
 def login_user(request):
-   if request.method == 'post':
+   if request.method == "POST":
       #connecter l'utilisateur
-      username = request.post.get('username')
-      password = request.post.get('password')
+      username = request.POST.get('username')
+      password = request.POST.get('password')
       user = authenticate(username = username, password = password)
 
       if user:
          login(request, user)
-         return redirect('index')
+      return redirect('index')
 
    return render(request, "comptes/login.html")
    

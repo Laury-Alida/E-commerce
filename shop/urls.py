@@ -31,4 +31,4 @@ urlpatterns = [
     path('logout/', logout_user, name='logout'),
     path('produit/<str:slug>', detail_produit, name="produit"),
 
-]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

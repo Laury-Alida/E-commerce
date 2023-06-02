@@ -1,5 +1,5 @@
 from django.contrib import admin
-from comptes.models import shopper
+from comptes.models import Shopper
 
 # Register your models here.
-admin.site.register(shopper)
+admin.site.register(Shopper)
